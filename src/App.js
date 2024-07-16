@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import FormInput from './FormInput';
+
+import IterationSample from './IterationSample';
+//import FormInput from './FormInput';
 //import MyComponent from './MyComponent';
 //import Counter from './Counter';
 //import Say from './Say';
@@ -10,9 +12,17 @@ import FormInput from './FormInput';
 
 class App extends Component {
   render() {
+    return <IterationSample />;
+  }
+}
+
+/*
+class App extends Component {
+  render() {
     return <FormInput />;
   }
 }
+*/
 /*
 class App extends Component {
   render() {

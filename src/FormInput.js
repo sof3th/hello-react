@@ -45,46 +45,28 @@ class FormInput extends Component {
       tel3: '',
     });
   };
-  idHandleKeyPress = (e) => {
+  handleKeyPress = (e) => {
+    console.log(e);
+    console.log(e.target);
+    // console.log(this.idRef);
     if (e.key === 'Enter') {
-      this.pwRef.focus();
+      if (e.target === this.idRef) this.pwRef.focus();
+      else if (e.target === this.pwRef) this.ssn1Ref.focus();
+      else if (e.target === this.ssn1Ref) this.ssn2Ref.focus();
+      else if (e.target === this.ssn2Ref) this.tel1Ref.focus();
+      else if (e.target === this.tel1Ref) this.tel2Ref.focus();
+      else if (e.target === this.tel2Ref) this.tel3Ref.focus();
+      else if (e.target === this.tel3Ref) this.handleClick();
     }
   };
-  pwHandleKeyPress = (e) => {
-    if (e.key === 'Enter') {
-      this.ssn1Ref.focus();
-    }
-  };
-  ssn1HandleKeyPress = (e) => {
-    if (e.key === 'Enter') {
-      this.ssn2Ref.focus();
-    }
-  };
-  ssn2HandleKeyPress = (e) => {
-    if (e.key === 'Enter') {
-      this.tel1Ref.focus();
-    }
-  };
-  tel1HandleKeyPress = (e) => {
-    if (e.key === 'Enter') {
-      this.tel2Ref.focus();
-    }
-  };
-  tel2HandleKeyPress = (e) => {
-    if (e.key === 'Enter') {
-      this.tel3Ref.focus();
-    }
-  };
-  tel3HandleKeyPress = (e) => {
-    if (e.key === 'Enter') {
-      this.handleClick();
-    }
-  };
+
   render() {
     return (
       <div>
-        <h1>회원 가입</h1>
-        <table border={1}>
+        <center>
+          <h1>회원 가입</h1>
+        </center>
+        <table align="center" border={1}>
           <tr>
             <td>아이디</td>
             <td>
@@ -97,7 +79,7 @@ class FormInput extends Component {
                 }}
                 value={this.state.id}
                 onChange={this.handleChange}
-                onKeyDown={this.idHandleKeyPress}
+                onKeyDown={this.handleKeyPress}
               />
             </td>
           </tr>
@@ -113,7 +95,7 @@ class FormInput extends Component {
                 }}
                 value={this.state.pw}
                 onChange={this.handleChange}
-                onKeyDown={this.pwHandleKeyPress}
+                onKeyDown={this.handleKeyPress}
               />
             </td>
           </tr>
@@ -129,7 +111,7 @@ class FormInput extends Component {
                 }}
                 value={this.state.ssn1}
                 onChange={this.handleChange}
-                onKeyDown={this.ssn1HandleKeyPress}
+                onKeyDown={this.handleKeyPress}
               />
               -
               <input
@@ -141,7 +123,7 @@ class FormInput extends Component {
                 }}
                 value={this.state.ssn2}
                 onChange={this.handleChange}
-                onKeyDown={this.ssn2HandleKeyPress}
+                onKeyDown={this.handleKeyPress}
               />
             </td>
           </tr>
@@ -157,7 +139,7 @@ class FormInput extends Component {
                 }}
                 value={this.state.tel1}
                 onChange={this.handleChange}
-                onKeyDown={this.tel1HandleKeyPress}
+                onKeyDown={this.handleKeyPress}
               />
               -
               <input
@@ -169,7 +151,7 @@ class FormInput extends Component {
                 }}
                 value={this.state.tel2}
                 onChange={this.handleChange}
-                onKeyDown={this.tel2HandleKeyPress}
+                onKeyDown={this.handleKeyPress}
               />
               -
               <input
@@ -181,7 +163,7 @@ class FormInput extends Component {
                 }}
                 value={this.state.tel3}
                 onChange={this.handleChange}
-                onKeyDown={this.tel3HandleKeyPress}
+                onKeyDown={this.handleKeyPress}
               />
             </td>
           </tr>
